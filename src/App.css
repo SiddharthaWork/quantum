@@ -102,7 +102,7 @@ nav {
 /* for footer  */
 .primarys-heading {
   font-size: clamp(2rem, 2vw, 20rem);
-  color: #000000;
+  color: #ffffff;
   line-height: 5rem;
   max-width: 800px;
 }
@@ -324,7 +324,7 @@ nav {
 .footer-section-columns span {
   margin: 0.25rem 0rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #e7e5e5;
   cursor: pointer;
 }
 .testimonial-section-bottom {
