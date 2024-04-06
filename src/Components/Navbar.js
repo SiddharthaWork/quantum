@@ -6,15 +6,17 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
+// import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
+// import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 // import {Link} from 'react-scroll';
 import { Link } from 'react-router-dom';
+import { RiTeamLine } from "react-icons/ri";
+import { FaServicestack } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -23,18 +25,31 @@ const Navbar = () => {
     {
       text: "Home",
       icon: <HomeIcon />,
+      link: "/",
     },
     {
       text: "About us",
       icon: <InfoIcon />,
+      link: "/about",
+
     },
     {
       text: "Services",
-      icon: <CommentRoundedIcon />,
+      icon: <FaServicestack />,
+      link: "/work",
+
+    },
+    {
+      text: "Team",
+      icon: <RiTeamLine />,
+      link: "/team",
+      
     },
     {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
+      link: "/form",
+      
     },
    
   ];
@@ -93,14 +108,14 @@ const Navbar = () => {
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
         >
-          <List>
-            {menuOptions.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+           <List>
+            {menuOptions.map((item, index) => (
+              <Link key={index} to={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <ListItem button>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
+                </ListItem>
+              </Link>
             ))}
           </List>
           <Divider />
